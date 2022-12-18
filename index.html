@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock</title>
     <link rel="stylesheet" href="css/styles.css"/>
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data-1970-2030.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,15 +18,16 @@
         <option value="">Select a city</option>
         <option value="">Select a city</option>
     </select>
-    <div class="city">
-        <h2>Paris</h2>
-        <div class="date">August 15th 2022</div>
-        <div class="hour">1:48:15 <small> AM </small></div>
-    </div>
-    <div class="city">
+    <div class="city" id="london">
+    
         <h2>London</h2>
-        <div class="date">August 15th 2022</div>
-        <div class="hour">1:48:15 <small> AM </small></div>
+        <div class="date"></div>
+        <div class="time"></div>
+    </div>
+    <div class="city" id="paris">
+        <h2>Paris</h2>
+        <div class="date"></div>
+        <div class="time"></div>
     </div></div>
     <footer>Coded by <strong>Flávia Nunes</strong> and is <a href="https://github.com/flaviacastnunes/world-clock" target="_blank">open sourced on GitHub.</a></footer>
 </body>
