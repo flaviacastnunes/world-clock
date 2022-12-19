@@ -18,6 +18,17 @@ function updateTime() {let londonElement = document.querySelector("#london");
       parisTimeElement.innerHTML = parisTime.format(
         "h:mm:ss [<small>]A[</small>]"
       );
+    }
+    let lisbonElement = document.querySelector("#lisbon");
+    if(lisbonElement){
+      let lisbonDateElement = lisbonElement.querySelector(".date");
+      let lisbonTimeElement = lisbonElement.querySelector(".time");
+      let lisbonTime = moment().tz("Europe/Lisbon");
+  
+      lisbonDateElement.innerHTML = lisbonTime.format("MMMM	Do YYYY");
+      lisbonTimeElement.innerHTML = lisbonTime.format(
+        "h:mm:ss [<small>]A[</small>]"
+      );
     }}
   
     updateTime();
@@ -39,6 +50,6 @@ function updateTime() {let londonElement = document.querySelector("#london");
     <h2>${cityName}</h2>
     <div class="date">${timeZone.format("MMMM	Do YYYY")}</div>
     <div class="time">${timeZone.format("h:mm:ss [<small>]A[</small>]")}</div>
-</div>`
+</div>
+<div><a href="index.html">See all cities</a></div><br>`
   }
-  
