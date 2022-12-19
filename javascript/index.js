@@ -21,15 +21,18 @@ function updateTime() {let londonElement = document.querySelector("#london");
     }}
   
     updateTime();
-  setInterval(updateTime, 1000);
+    setInterval(updateTime, 1000);
 
   let cityElement = document.querySelector("#city");
   cityElement.addEventListener("change", changeCity);
 
   function changeCity(event) {
     let cityTimeZone = event.target.value; 
-    let cityName= cityTimeZone.replace("_", " ").split("/")[1];
+    if(cityTimeZone=== "current"){
+      cityTimeZone = moment.tz.guess();
+    }
     let timeZone = moment().tz(cityTimeZone);
+    let cityName= cityTimeZone.replace("_", " ").split("/")[1];
     let cities = document.querySelector("#cities");
     cities.innerHTML=
     `<div class="city">    
